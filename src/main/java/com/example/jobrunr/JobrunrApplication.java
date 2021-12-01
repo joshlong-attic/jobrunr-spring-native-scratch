@@ -27,7 +27,17 @@ import org.springframework.nativex.hint.TypeHint;
 		"/org/jobrunr/storage/sql/common/migrations/v011__change_sqlserver_text_to_varchar.sql"
 	}
 )
-@TypeHint(types = {org.jobrunr.jobs.details.CachingJobDetailsGenerator.class,
+@TypeHint(types = {
+	org.jobrunr.jobs.states.EnqueuedState.class ,
+	org.jobrunr.jobs.states.AbstractJobState.class ,
+	org.jobrunr.jobs.states.DeletedState.class ,
+	org.jobrunr.jobs.states.FailedState.class ,
+	org.jobrunr.jobs.states.ScheduledState.class ,
+	org.jobrunr.jobs.states.SucceededState.class ,
+	org.jobrunr.jobs.states.ProcessingState.class ,
+	org.jobrunr.jobs.states.StateName.class ,
+	org.jobrunr.jobs.states.JobState.class ,
+	org.jobrunr.jobs.details.CachingJobDetailsGenerator.class,
 	org.jobrunr.storage.sql.h2.H2StorageProvider.class, Job.class, RecurringJob.class,
 	org.jobrunr.storage.sql.postgres.PostgresStorageProvider.class, MyJobRequest.class, MyJobRequestHandler.class}, access = AccessBits.ALL)
 @SpringBootApplication
