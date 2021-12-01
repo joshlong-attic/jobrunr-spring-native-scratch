@@ -1,1 +1,2 @@
-mvn -DskipTests=true -Pnative clean package 
+#!/usr/bin/env bash
+mvn -DskipTests=true -Pnative clean package && ./target/jobrunr
