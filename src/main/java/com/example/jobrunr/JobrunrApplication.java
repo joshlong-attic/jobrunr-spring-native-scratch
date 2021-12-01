@@ -5,6 +5,7 @@ import com.example.jobrunr.jobs.MyJobRequestHandler;
 import org.jobrunr.jobs.Job;
 import org.jobrunr.jobs.RecurringJob;
 import org.jobrunr.scheduling.JobRequestScheduler;
+import org.jobrunr.spring.annotations.Recurring;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.nativex.hint.AccessBits;
@@ -28,9 +29,12 @@ import org.springframework.nativex.hint.TypeHint;
 	}
 )
 @TypeHint(types = {
+	org.jobrunr.jobs.annotations.Job.class ,
+	Recurring.class ,
 	org.jobrunr.jobs.states.EnqueuedState.class ,
 	org.jobrunr.jobs.states.AbstractJobState.class ,
 	org.jobrunr.jobs.states.DeletedState.class ,
+	java.util.concurrent.ConcurrentHashMap.class ,
 	org.jobrunr.jobs.states.FailedState.class ,
 	org.jobrunr.jobs.states.ScheduledState.class ,
 	org.jobrunr.jobs.states.SucceededState.class ,
