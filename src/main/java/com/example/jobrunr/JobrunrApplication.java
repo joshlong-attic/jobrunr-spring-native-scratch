@@ -15,6 +15,7 @@ import org.jobrunr.spring.annotations.Recurring;
 import org.jobrunr.spring.autoconfigure.metrics.JobRunrMetricsAutoConfiguration;
 import org.jobrunr.storage.sql.h2.H2StorageProvider;
 import org.jobrunr.storage.sql.postgres.PostgresStorageProvider;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -75,7 +76,7 @@ import java.util.concurrent.ConcurrentHashMap;
 		, PostgresStorageProvider.class
 		, ProcessingState.class
 		, Recurring.class
-		, RecurringJob.class,
+		, RecurringJob.class
 		, ScheduledState.class
 		, Short.class
 		, StateName.class
@@ -99,14 +100,17 @@ import java.util.concurrent.ConcurrentHashMap;
 public class JobrunrApplication {
 
 	public static void main(String[] args) throws InterruptedException {
-		var applicationContext = SpringApplication.run(JobrunrApplication.class, args);
-		var jobRequestScheduler = applicationContext.getBean(JobRequestScheduler.class);
-		var jobId = jobRequestScheduler.enqueue(new MyJobRequest("Ronald"));
-		System.out.println("the job id is " + jobId.toString());
+		SpringApplication.run(JobrunrApplication.class, args);
 		Thread.currentThread().join();
 	}
 
-	 
+	@Bean
+	ApplicationRunner runner(JobRequestScheduler scheduler) {
+		return args -> {
+			var jobId = scheduler.enqueue(new MyJobRequest("Ronald"));
+			System.out.println("the job id is " + jobId.toString());
+		};
+	}
 
 }
 
