@@ -1,5 +1,4 @@
-package com.example.jobrunr.jobs;
-
+package com.example.jobrunr;
 
 import org.jobrunr.jobs.lambdas.JobRequest;
 
@@ -11,15 +10,15 @@ public class MyJobRequest implements JobRequest {
 		this.name = name;
 	}
 
-	MyJobRequest() {
+	public MyJobRequest() {
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	@Override
 	public Class<MyJobRequestHandler> getJobRequestHandler() {
 		return MyJobRequestHandler.class;
-	}
-
-	public String getName() {
-		return name;
 	}
 }

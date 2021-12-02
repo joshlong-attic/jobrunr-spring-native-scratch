@@ -1,11 +1,10 @@
 package com.example.jobrunr;
 
-import com.example.jobrunr.jobs.MyJobRequest;
-import com.example.jobrunr.jobs.MyJobRequestHandler;
 import org.jobrunr.jobs.AbstractJob;
 import org.jobrunr.jobs.Job;
 import org.jobrunr.jobs.JobDetails;
 import org.jobrunr.jobs.RecurringJob;
+import org.jobrunr.jobs.context.JobDashboardLogger;
 import org.jobrunr.jobs.details.CachingJobDetailsGenerator;
 import org.jobrunr.jobs.filters.ElectStateFilter;
 import org.jobrunr.jobs.filters.JobFilter;
@@ -47,52 +46,54 @@ import java.util.concurrent.ConcurrentHashMap;
 @TypeHint(
 
 	types = {
-
-		AbstractJob.class
-		, AbstractJobState.class
-		, Boolean.class
-		, Byte.class
-		, CachingJobDetailsGenerator.class
-		, Character.class
-		, ConcurrentHashMap.class
-		, DeletedState.class
-		, Double.class
-		, Duration.class
-		, ElectStateFilter.class
-		, EnqueuedState.class
-		, Enum.class
-		, FailedState.class
-		, Float.class
-		, H2StorageProvider.class
-		, Instant.class
-		, Integer.class
-		, Job.class
-		, JobDetails.class
-		, JobFilter.class
-		, JobState.class
-		, Long.class
-		, MyJobRequest.class
-		, MyJobRequestHandler.class
-		, PostgresStorageProvider.class
-		, ProcessingState.class
-		, Recurring.class
-		, RecurringJob.class
-		, ScheduledState.class
-		, Short.class
-		, StateName.class
-		, String.class
-		, SucceededState.class
-		, UUID.class
-		, boolean.class
-		, byte.class
-		, char.class
-		, double.class
-		, float.class
-		, int.class
-		, long.class
-		, org.jobrunr.jobs.Job.class
-		, org.jobrunr.jobs.annotations.Job.class
-		, short.class
+		AbstractJob.class,
+		AbstractJobState.class,
+		Boolean.class,
+		Byte.class,
+		CachingJobDetailsGenerator.class,
+		Character.class,
+		ConcurrentHashMap.class,
+		DeletedState.class,
+		Double.class,
+		Duration.class,
+		ElectStateFilter.class,
+		EnqueuedState.class,
+		Enum.class,
+		FailedState.class,
+		Float.class,
+		H2StorageProvider.class,
+		Instant.class,
+		Integer.class,
+		JobDashboardLogger.class,
+		JobDashboardLogger.JobDashboardLogLine.class,
+		JobDashboardLogger.JobDashboardLogLines.class,
+		Job.class,
+		JobDetails.class,
+		JobFilter.class,
+		JobState.class,
+		Long.class,
+		MyJobRequest.class,
+		MyJobRequestHandler.class,
+		PostgresStorageProvider.class,
+		ProcessingState.class,
+		Recurring.class,
+		RecurringJob.class,
+		ScheduledState.class,
+		Short.class,
+		StateName.class,
+		String.class,
+		SucceededState.class,
+		UUID.class,
+		boolean.class,
+		byte.class,
+		char.class,
+		double.class,
+		float.class,
+		int.class,
+		long.class,
+		org.jobrunr.jobs.Job.class,
+		org.jobrunr.jobs.annotations.Job.class,
+		short.class
 	},
 	access = AccessBits.ALL
 )

@@ -1,4 +1,4 @@
-package com.example.jobrunr.jobs;
+package com.example.jobrunr;
 
 import org.jobrunr.jobs.lambdas.JobRequestHandler;
 import org.springframework.stereotype.Component;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class MyJobRequestHandler implements JobRequestHandler<MyJobRequest> {
 
 	@Override
-	public void run(MyJobRequest jobRequest) throws Exception {
+	public void run(MyJobRequest jobRequest) {
 		System.out.println("Hello from " + jobRequest.getName());
 	}
 }
