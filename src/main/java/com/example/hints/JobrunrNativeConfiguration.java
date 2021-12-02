@@ -22,66 +22,29 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import static org.springframework.nativex.hint.TypeAccess.*;
 
-@NativeHint(
-	trigger = JobScheduler.class,
-	types = {
+@NativeHint(trigger = JobScheduler.class, types = {
 
 		@TypeHint(
 
-			types = {
-				boolean.class,
-				byte.class,
-				char.class,
-				double.class,
-				float.class,
-				int.class,
-				long.class,
-				short.class,
-				Float.class,
-				Short.class,
-				String.class,
-				Long.class,
-				Integer.class,
-				Boolean.class,
-				Byte.class,
-				Character.class,
-				Double.class,
+				types = { boolean.class, byte.class, char.class, double.class, float.class, int.class, long.class,
+						short.class, Float.class, Short.class, String.class, Long.class, Integer.class, Boolean.class,
+						Byte.class, Character.class, Double.class,
 
-				///
-				AbstractJob.class,
-				AbstractJobState.class,
+						///
+						AbstractJob.class, AbstractJobState.class,
 
-				CachingJobDetailsGenerator.class,
-				ConcurrentHashMap.class,
-				DeletedState.class,
-				Duration.class,
-				ElectStateFilter.class,
-				EnqueuedState.class,
-				Enum.class,
-				FailedState.class,
-				Instant.class,
-				JobDashboardLogger.class,
-				JobDashboardLogger.JobDashboardLogLine.class,
-				JobDashboardLogger.JobDashboardLogLines.class,
-				Job.class,
-				JobDetails.class,
-				JobFilter.class,
-				JobState.class,
-				ProcessingState.class,
-				org.jobrunr.jobs.details.CachingJobDetailsGenerator.class,
-				Recurring.class,
-				RecurringJob.class,
-				ScheduledState.class,
-				StateName.class,
+						CachingJobDetailsGenerator.class, ConcurrentHashMap.class, DeletedState.class, Duration.class,
+						ElectStateFilter.class, EnqueuedState.class, Enum.class, FailedState.class, Instant.class,
+						JobDashboardLogger.class, JobDashboardLogger.JobDashboardLogLine.class,
+						JobDashboardLogger.JobDashboardLogLines.class, Job.class, JobDetails.class, JobFilter.class,
+						JobState.class, ProcessingState.class,
+						org.jobrunr.jobs.details.CachingJobDetailsGenerator.class, Recurring.class, RecurringJob.class,
+						ScheduledState.class, StateName.class,
 
-				SucceededState.class,
-				UUID.class,
+						SucceededState.class, UUID.class,
 
-				org.jobrunr.jobs.Job.class,
-				org.jobrunr.jobs.annotations.Job.class,
-			},
-			access = {DECLARED_CLASSES, DECLARED_CONSTRUCTORS, DECLARED_FIELDS, DECLARED_METHODS}
-		)
-	})
+						org.jobrunr.jobs.Job.class, org.jobrunr.jobs.annotations.Job.class, },
+				access = { DECLARED_CLASSES, DECLARED_CONSTRUCTORS, DECLARED_FIELDS, DECLARED_METHODS }) })
 public class JobrunrNativeConfiguration implements NativeConfiguration {
+
 }

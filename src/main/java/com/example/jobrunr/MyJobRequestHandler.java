@@ -10,4 +10,5 @@ public class MyJobRequestHandler implements JobRequestHandler<MyJobRequest> {
 	public void run(MyJobRequest jobRequest) {
 		System.out.println("Hello from " + jobRequest.getName());
 	}
+
 }

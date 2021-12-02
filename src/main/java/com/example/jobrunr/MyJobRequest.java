@@ -21,4 +21,5 @@ public class MyJobRequest implements JobRequest {
 	public Class<MyJobRequestHandler> getJobRequestHandler() {
 		return MyJobRequestHandler.class;
 	}
+
 }
