@@ -1,0 +1,1 @@
+truncate  jobrunr_backgroundjobservers , jobrunr_jobs, jobrunr_metadata, jobrunr_migrations , jobrunr_recurring_jobs ;
