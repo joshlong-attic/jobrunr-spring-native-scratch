@@ -21,8 +21,6 @@ public class JobrunrBeanFactoryNativeConfigurationProcessor implements BeanFacto
 	@SneakyThrows
 	@Override
 	public void process(ConfigurableListableBeanFactory beanFactory, NativeConfigurationRegistry registry) {
-
-		// lets register the org.jobrunr.jobs.lambdas.JobRequest
 		var jobRequestHandlers = beanFactory.getBeansOfType(JobRequestHandler.class);
 		for (var e : jobRequestHandlers.entrySet()) {
 			var value = e.getValue();
@@ -35,9 +33,8 @@ public class JobrunrBeanFactoryNativeConfigurationProcessor implements BeanFacto
 				.get(0);
 			var types = runMethod.getParameterTypes()[0];
 			registry.reflection().forType(types).withAccess(TypeAccess.values()).build();
-
 		}
-
+		
 		var spMap = beanFactory.getBeansOfType(StorageProvider.class);
 		spMap.forEach((k, sp) -> {
 			registry.reflection().forType(sp.getClass()).withAccess(TypeAccess.values()).build();
