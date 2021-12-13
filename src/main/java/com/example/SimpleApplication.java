@@ -17,7 +17,8 @@ public class SimpleApplication {
 		};
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SimpleApplication.class, args);
+		Thread.currentThread().join();
 	}
 }
