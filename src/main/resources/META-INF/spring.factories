@@ -1,5 +1,4 @@
-org.springframework.nativex.type.NativeConfiguration=\
-  com.example.hints.JobrunrNativeConfiguration
-
+org.springframework.nativex.type.NativeConfiguration=com.example.nativex.JobrunrNativeConfiguration
+#
 org.springframework.aot.context.bootstrap.generator.infrastructure.nativex.BeanFactoryNativeConfigurationProcessor=\
-  com.example.hints.JobrunrBeanFactoryNativeConfigurationProcessor
+  com.example.nativex.JobrunrBeanFactoryNativeConfigurationProcessor

@@ -1,4 +1,4 @@
-package com.example.jobrunr;
+package com.example;
 
 import org.jobrunr.jobs.lambdas.JobRequest;
 
