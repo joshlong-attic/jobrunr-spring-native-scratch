@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.services.SampleJobService;
 import org.jobrunr.scheduling.JobRequestScheduler;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +18,12 @@ public class SimpleApplication {
 			var jobId = scheduler.enqueue(new MyJobRequest("Ronald"));
 			System.out.println("the job id is " + jobId.toString());
 		};
+	}
+
+	@Bean
+	// why is component scanning not working? I needed to add this as otherwise it does not instantiate the SampleJobService
+	SampleJobService sampleJobService() {
+		return new SampleJobService();
 	}
 
 	public static void main(String[] args) throws Exception {
