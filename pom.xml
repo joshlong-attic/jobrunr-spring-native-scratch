@@ -16,7 +16,7 @@
         <java.version>17</java.version>
         <repackage.classifier/>
         <spring-native.version>0.11.0</spring-native.version>
-        <jobrunr.version>1.0.0-SNAPSHOT</jobrunr.version>
+        <jobrunr.version>4.0.5</jobrunr.version>
     </properties>
     <dependencies>
         <!--
